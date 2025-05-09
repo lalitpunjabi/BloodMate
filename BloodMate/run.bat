@@ -1,0 +1,3 @@
+@echo off
+echo Running JavaFX application...
+call mvn javafx:run 

@@ -1,0 +1,4 @@
+Lalit Punjabi,20,B+,2020-10-10,9653926918,lalitpunjabi5@gmail.com,Samta Nagar Bikaner,70.0,false,healthy,true,Jaipur,Rakhi Punjabi,8118835020
+Lalit Punjabi,20,B+,2020-09-04,9653926918,lalitpunjabi5@gmail.com,BKN,70.0,false,Healthy,true,JPR,Rakhi ,8118835020
+Lalit Punjabi,20,B+,2020-09-04,9653926918,lalitpunjabi5@gmail.com,BKN,70.0,false,Healthy,false,JPR,Rakhi ,8118835020
+Sumit Kumar,22,O+,2024-10-02,9434258292,sumit9434@gmail.com,Sikar,70.0,false,Healthy,true,Jaipur,Amit,9942623820
