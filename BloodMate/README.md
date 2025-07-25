@@ -1,139 +1,107 @@
-# BloodMate - Blood Donation Management System
+# BloodMate - Modern Blood Donation Management System (Web)
 
-BloodMate is a comprehensive blood donation management system that helps connect donors with recipients, manage blood inventory, and track donation campaigns.
+BloodMate is a next-generation blood donation management system, reimagined as a modern, full-stack web application. It connects donors and recipients, manages blood inventory and donation campaigns, and provides a creative, interactive dashboard experience.
+
+---
 
 ## Features
 
-### 1. Donor Management
-- Donor registration with detailed information
-- Donor eligibility checking
-- Donor search and filtering
-- Donor profile updates
-- Emergency donor availability tracking
+### Donor Management
+- Online donor registration & profile
+- Eligibility checking and history
+- Search, filter, and update donors
+- Emergency donor availability
 
-### 2. Blood Matching System
-- Blood type compatibility checking
-- Donor-recipient matching
+### Blood Matching System
+- Blood type compatibility & smart matching
 - Location-based donor search
 - Emergency blood request handling
 
-### 3. Rewards System
-- Points-based reward program
-- Different point values for blood types:
-  - O-: 100 points (Universal donor)
-  - O+: 80 points
-  - A-: 80 points
-  - A+: 70 points
-  - B-: 80 points
-  - B+: 70 points
-  - AB-: 70 points
-  - AB+: 60 points
-- Reward tiers:
-  - Bronze Donor (200 points)
-  - Silver Donor (500 points)
-  - Gold Donor (1000 points)
-  - Platinum Donor (2000 points)
-  - Emergency Hero (300 points)
-- Top donors leaderboard
-- Donor statistics tracking
+### Rewards & Gamification
+- Points-based rewards (with tiers: Bronze, Silver, Gold, Platinum, Emergency Hero)
+- Animated leaderboard
+- Badges, confetti, and streak progress bars
+- Top donors and statistics
 
-### 4. Blood Inventory Management
-- Real-time blood stock tracking
-- Expiration date monitoring
-- Low stock alerts
-- Blood unit reservation system
-- Minimum stock level management
-- Expiring blood unit notifications
+### Blood Inventory
+- Real-time stock tracking
+- Expiry & low stock alerts
+- Unit reservation and minimum stock management
 
-### 5. Campaign Management
-- Blood donation campaign creation
-- Campaign registration
-- Campaign statistics
-- Location-based campaign filtering
-- Blood group-specific campaigns
-- Campaign history tracking
+### Campaigns
+- Campaign creation, registration, and stats
+- Location & blood group filtering
+- Campaign history and success rates
 
-### 6. Statistics and Reporting
-- General donation statistics
-- Blood group distribution
-- Campaign success rates
-- Donor participation metrics
-- Emergency response statistics
+### Advanced Dashboard Widgets
+- **AI Chatbot** for blood donation Q&A
+- **Gamified badges/confetti**
+- **Global donor map**
+- **Voice search & commands**
+- **Animated leaderboard**
+- **Easter eggs & surprises**
+- **Donation streak progress bars**
+- **Dark mode & accessibility**
 
-## Technical Details
+---
 
-### Prerequisites
-- Java 17 or higher
-- JavaFX
-- Maven
+## Technical Stack
 
-### Project Structure
+- **Backend:** Java Spring Boot REST API (`localhost:8080`)
+    - Controllers for donors, campaigns, rewards, inventory, stats, matching
+    - Persistent storage (file or DB)
+    - CORS enabled for frontend
+- **Frontend:** Responsive web dashboard (`localhost:8082`)
+    - Modern HTML, CSS, JS (modular)
+    - Advanced interactive UI/UX
+    - All data via backend API (no localStorage/mock data)
+    - Sidebar widgets: collapsible, accessible, vertical under menu
+- **Deployment:**
+    - Backend: `mvn spring-boot:run` (Java 17+)
+    - Frontend: `python server.py` (or any static server)
+
+---
+
+## Project Structure
+
 ```
-src/main/java/com/blooddonation/
-├── BloodDonationGUI.java      # Main GUI application
-├── BloodInventory.java        # Blood inventory management
-├── BloodMatcher.java          # Blood matching logic
-├── CampaignManager.java       # Campaign management
-├── Donor.java                 # Donor entity
-├── DonorManager.java          # Donor management
-├── EligibilityChecker.java    # Donor eligibility checking
-├── RewardsManager.java        # Rewards system
-├── RewardsPanel.java          # Rewards GUI
-└── StatisticsManager.java     # Statistics and reporting
+BloodMate/
+├── BloodMate/           # Java Spring Boot backend
+│   └── src/main/java/com/blooddonation/webapi/
+│       ├── controller/
+│       ├── model/
+│       ├── service/
+│       └── ...
+├── BloodMate-Web/       # Frontend web app
+│   ├── index.html
+│   ├── js/
+│   ├── styles/
+│   ├── server.py
+│   └── ...
+└── README.md
 ```
 
-### Key Classes
-
-#### BloodDonationGUI
-- Main application window
-- Menu system
-- Form handling
-- Alert system
-- Navigation controls
-
-#### Donor
-- Unique ID generation
-- Personal information
-- Medical history
-- Emergency contact details
-- Donation preferences
-
-#### BloodInventory
-- Blood unit tracking
-- Expiration management
-- Stock level monitoring
-- Reservation system
-
-#### CampaignManager
-- Campaign creation and management
-- Donor registration
-- Campaign statistics
-- Location-based filtering
-
-#### RewardsManager
-- Points system
-- Reward tracking
-- Donor statistics
-- Leaderboard management
-
-### Data Storage
-- Donor information stored in `donors.txt`
-- Persistent storage for donor records
-- Campaign history tracking
-- Reward history maintenance
+---
 
 ## Getting Started
 
-1. Clone the repository
-2. Ensure Java 17+ and Maven are installed
-3. Build the project:
-   ```bash
-   mvn clean install
-   ```
-4. Run the application:
-   ```bash
-   mvn javafx:run
-   ```
+### 1. Clone the repository
+
+### 2. Start Backend API
+```bash
+cd BloodMate/BloodMate
+mvn spring-boot:run
+```
+API: http://localhost:8080
+
+### 3. Start Frontend
+```bash
+cd BloodMate/BloodMate-Web
+python server.py
+```
+App: http://localhost:8082
+
+---
 
 ## Usage
 
