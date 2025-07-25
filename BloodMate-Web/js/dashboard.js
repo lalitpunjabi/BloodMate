@@ -2,14 +2,14 @@
 class BloodMateApp {
     constructor() {
         this.donors = [];
-this.fetchDonors();
-        this.campaigns = JSON.parse(localStorage.getItem('bloodmate_campaigns') || '[]');
-        this.inventory = JSON.parse(localStorage.getItem('bloodmate_inventory') || '{}');
-        this.rewards = JSON.parse(localStorage.getItem('bloodmate_rewards') || '{}');
+        this.campaigns = [];
+        this.inventory = {};
+        this.rewards = {};
         this.currentSection = 'overview';
         
         this.initializeDashboard();
-        this.loadSampleData();
+        this.fetchCampaigns();
+        this.fetchDonors();
     }
     
     initializeDashboard() {

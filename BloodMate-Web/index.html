@@ -345,7 +345,38 @@
                             Statistics
                         </button>
                     </div>
-                    <div id="dashboard-widgets" class="dashboard-widgets"></div>
+                    <div id="dashboard-widgets" class="dashboard-widgets">
+    <!-- Collapsible Widget: Leaderboard -->
+    <div class="widget-panel" id="widget-leaderboard">
+        <button class="widget-toggle" aria-expanded="false" aria-controls="leaderboard-content">
+            <i class="fas fa-crown"></i> Leaderboard
+        </button>
+        <div class="widget-content" id="leaderboard-content" hidden>
+            <!-- Leaderboard widget will render here -->
+            <div id="leaderboard-widget"></div>
+        </div>
+    </div>
+    <!-- Collapsible Widget: Badges & Confetti -->
+    <div class="widget-panel" id="widget-badges">
+        <button class="widget-toggle" aria-expanded="false" aria-controls="badges-content">
+            <i class="fas fa-award"></i> Badges & Confetti
+        </button>
+        <div class="widget-content" id="badges-content" hidden>
+            <!-- Badges/confetti widget will render here -->
+            <div id="badges-widget"></div>
+        </div>
+    </div>
+    <!-- Collapsible Widget: Donor Map -->
+    <div class="widget-panel" id="widget-map">
+        <button class="widget-toggle" aria-expanded="false" aria-controls="map-content">
+            <i class="fas fa-map-marker-alt"></i> Donor Map
+        </button>
+        <div class="widget-content" id="map-content" hidden>
+            <!-- Donor map widget will render here -->
+            <div id="donor-map-widget"></div>
+        </div>
+    </div>
+</div>
                 </div>
                 <div class="dashboard-main">
                     <div id="dashboard-content">

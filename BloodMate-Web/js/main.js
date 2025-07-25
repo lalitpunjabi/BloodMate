@@ -12,6 +12,26 @@ function initializeApp() {
     setupMobileMenu();
     setupSmoothScrolling();
     setupIntersectionObserver();
+    setupSidebarWidgets();
+}
+
+// Sidebar Widget Collapsible Logic
+function setupSidebarWidgets() {
+    const toggles = document.querySelectorAll('.widget-toggle');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const contentId = this.getAttribute('aria-controls');
+            const content = document.getElementById(contentId);
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+                this.setAttribute('aria-expanded', 'false');
+                content.hidden = true;
+            } else {
+                this.setAttribute('aria-expanded', 'true');
+                content.hidden = false;
+            }
+        });
+    });
 }
 
 // Navigation Setup

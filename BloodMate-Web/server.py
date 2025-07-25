@@ -10,7 +10,7 @@ import webbrowser
 from pathlib import Path
 
 # Configuration
-PORT = 8081
+PORT = 8082
 DIRECTORY = Path(__file__).parent
 
 class BloodMateHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
