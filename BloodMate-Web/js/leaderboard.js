@@ -8,7 +8,8 @@ class AnimatedLeaderboard {
         const lb = document.createElement('div');
         lb.id = 'animated-leaderboard';
         lb.innerHTML = `<h3>Top Donors</h3><ol class="leaderboard-list"></ol>`;
-        document.body.appendChild(lb);
+        const sidebarWidgets = document.querySelector('.dashboard-sidebar .dashboard-widgets');
+if (sidebarWidgets) sidebarWidgets.appendChild(lb);
         this.list = lb.querySelector('.leaderboard-list');
         this.loadLeaderboard();
     }

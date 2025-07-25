@@ -17,7 +17,9 @@ class BadgeConfetti {
         const panel = document.createElement('div');
         panel.id = 'badge-confetti-panel';
         panel.innerHTML = `<h3>Badges</h3><div class="badge-list"></div>`;
-        document.body.appendChild(panel);
+        const sidebarWidgets = document.querySelector('.dashboard-sidebar .dashboard-widgets');
+        if (sidebarWidgets) sidebarWidgets.appendChild(panel);
+        this.panel = panel;
         this.badgeList = panel.querySelector('.badge-list');
         this.loadBadges();
     }

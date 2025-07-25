@@ -632,6 +632,65 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .dashboard-container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 80vh;
+        position: relative;
+    }
+    .dashboard-content {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+        min-height: 60vh;
+        overflow: visible;
+        position: relative;
+    }
+    .dashboard-sidebar {
+        min-width: 220px;
+        max-width: 260px;
+        background: var(--gray-50);
+        border-right: 1px solid var(--gray-200);
+        z-index: 2;
+        position: relative;
+        padding-bottom: 2rem;
+    }
+    .dashboard-main {
+    flex: 1 1 0%;
+    min-width: 0;
+    overflow-x: auto;
+    background: white;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 2rem;
+}
+
+.dashboard-widgets {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .dashboard-widgets {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+        flex: 1 1 0%;
+        min-width: 0;
+        overflow-x: auto;
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 2rem;
+    }
     .stats-grid {
         grid-template-columns: 1fr;
     }

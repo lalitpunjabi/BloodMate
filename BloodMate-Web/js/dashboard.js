@@ -1,7 +1,8 @@
 // Dashboard JavaScript for BloodMate
 class BloodMateApp {
     constructor() {
-        this.donors = JSON.parse(localStorage.getItem('bloodmate_donors') || '[]');
+        this.donors = [];
+this.fetchDonors();
         this.campaigns = JSON.parse(localStorage.getItem('bloodmate_campaigns') || '[]');
         this.inventory = JSON.parse(localStorage.getItem('bloodmate_inventory') || '{}');
         this.rewards = JSON.parse(localStorage.getItem('bloodmate_rewards') || '{}');
@@ -292,51 +293,49 @@ class BloodMateApp {
         }
     }
     
-    registerDonor(formData) {
-        const donor = {
-            id: 'D' + Date.now(),
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            age: parseInt(formData.get('age')),
-            bloodGroup: formData.get('bloodGroup'),
-            weight: parseInt(formData.get('weight')),
-            address: formData.get('address'),
-            city: formData.get('city'),
-            registrationDate: new Date(),
-            donationCount: 0,
-            lastDonation: null
-        };
-        
-        this.donors.push(donor);
-        this.saveDonors();
-        
-        this.showNotification('Donor registered successfully!', 'success');
-        document.getElementById('donor-registration-form').reset();
-    }
-    
-    saveDonors() {
-        localStorage.setItem('bloodmate_donors', JSON.stringify(this.donors));
-    }
-    
-    loadSampleData() {
-        if (this.donors.length === 0) {
-            this.donors = [
-                { id: 'D001', name: 'John Doe', bloodGroup: 'O+', age: 28, city: 'New York', phone: '123-456-7890', donationCount: 5 },
-                { id: 'D002', name: 'Jane Smith', bloodGroup: 'A-', age: 32, city: 'Los Angeles', phone: '098-765-4321', donationCount: 3 },
-                { id: 'D003', name: 'Mike Johnson', bloodGroup: 'B+', age: 25, city: 'Chicago', phone: '555-123-4567', donationCount: 7 }
-            ];
-            this.saveDonors();
+    async registerDonor(formData) {
+    const donor = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        age: parseInt(formData.get('age')),
+        bloodGroup: formData.get('bloodGroup'),
+        weight: parseInt(formData.get('weight')),
+        address: formData.get('address'),
+        city: formData.get('city')
+    };
+    try {
+        const res = await fetch('http://localhost:8080/api/donors', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(donor)
+        });
+        if (res.ok) {
+            this.showNotification('Donor registered successfully!', 'success');
+            document.getElementById('donor-registration-form').reset();
+            this.fetchDonors();
+        } else {
+            const errorMsg = await res.text();
+            this.showNotification('Registration failed: ' + errorMsg, 'error');
         }
-        
-        if (this.campaigns.length === 0) {
-            this.campaigns = [
-                { id: 'C001', name: 'Save Lives Campaign', date: new Date(), location: 'Community Center', target: 100, registrations: 75, status: 'active' },
-                { id: 'C002', name: 'Emergency Blood Drive', date: new Date(), location: 'Hospital', target: 50, registrations: 30, status: 'active' }
-            ];
-            localStorage.setItem('bloodmate_campaigns', JSON.stringify(this.campaigns));
-        }
+    } catch (err) {
+        this.showNotification('Registration failed: ' + err, 'error');
     }
+}
+    
+    // Donor saving now handled by backend API.
+    
+    // Sample data loading now handled by backend API for donors.
+loadSampleData() {
+    // Only load campaigns sample data for now, until backend integration for campaigns is done.
+    if (this.campaigns.length === 0) {
+        this.campaigns = [
+            { id: 'C001', name: 'Save Lives Campaign', date: new Date(), location: 'Community Center', target: 100, registrations: 75, status: 'active' },
+            { id: 'C002', name: 'Emergency Blood Drive', date: new Date(), location: 'Hospital', target: 50, registrations: 30, status: 'active' }
+        ];
+        localStorage.setItem('bloodmate_campaigns', JSON.stringify(this.campaigns));
+    }
+}
     
     showNotification(message, type) {
         // Reuse the notification function from main.js
