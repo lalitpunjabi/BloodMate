@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodMate - Save Lives, One Drop at a Time</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/darkmode.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-tint blood-drop"></i>
+                <span class="logo-text">BloodMate</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#dashboard" class="nav-link btn-primary">Dashboard</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Save Lives, One 
+                        <span class="highlight">Drop</span> at a Time
+                    </h1>
+                    <p class="hero-description">
+                        Join BloodMate, the most advanced blood donation management platform. 
+                        Connect donors with recipients, manage campaigns, and make a difference in your community.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="showDashboard()">
+                            <i class="fas fa-heart"></i>
+                            Start Donating
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="scrollToSection('features')">
+                            <i class="fas fa-play"></i>
+                            Learn More
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="1250">0</span>
+                            <span class="stat-label">Lives Saved</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="850">0</span>
+                            <span class="stat-label">Active Donors</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="45">0</span>
+                            <span class="stat-label">Campaigns</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="blood-drop-animation">
+                        <div class="drop drop-1"></div>
+                        <div class="drop drop-2"></div>
+                        <div class="drop drop-3"></div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="card-header">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Emergency Alert</span>
+                        </div>
+                        <div class="card-content">
+                            <p>O- Blood Type Needed</p>
+                            <p class="urgent">URGENT: 5 units required</p>
+                            <button class="btn btn-danger btn-small">Respond Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="bg-shape shape-1"></div>
+            <div class="bg-shape shape-2"></div>
+            <div class="bg-shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Blood Management</h2>
+                <p class="section-subtitle">Everything you need to manage blood donations efficiently</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Donor Management</h3>
+                    <p>Complete donor registration, eligibility checking, and profile management system.</p>
+                    <ul class="feature-list">
+                        <li>Smart eligibility verification</li>
+                        <li>Emergency donor availability</li>
+                        <li>Comprehensive donor profiles</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Blood Matching</h3>
+                    <p>Advanced blood type compatibility checking and donor-recipient matching.</p>
+                    <ul class="feature-list">
+                        <li>Real-time compatibility check</li>
+                        <li>Location-based matching</li>
+                        <li>Emergency request handling</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Rewards System</h3>
+                    <p>Motivate donors with our comprehensive points-based reward program.</p>
+                    <ul class="feature-list">
+                        <li>Tier-based rewards (Bronze to Platinum)</li>
+                        <li>Emergency hero recognition</li>
+                        <li>Leaderboard system</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Inventory Management</h3>
+                    <p>Real-time blood stock tracking with smart alerts and notifications.</p>
+                    <ul class="feature-list">
+                        <li>Expiration date monitoring</li>
+                        <li>Low stock alerts</li>
+                        <li>Reservation system</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Campaign Management</h3>
+                    <p>Create and manage blood donation campaigns with detailed analytics.</p>
+                    <ul class="feature-list">
+                        <li>Campaign creation tools</li>
+                        <li>Registration management</li>
+                        <li>Success rate tracking</li>
+                    </ul>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Analytics & Reports</h3>
+                    <p>Comprehensive statistics and reporting for data-driven decisions.</p>
+                    <ul class="feature-list">
+                        <li>Donation statistics</li>
+                        <li>Blood group distribution</li>
+                        <li>Campaign performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Making Blood Donation Simple</h2>
+                    <p class="about-description">
+                        BloodMate revolutionizes blood donation management by providing a comprehensive platform 
+                        that connects donors, recipients, and healthcare facilities seamlessly.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure & Reliable</h4>
+                                <p>Your data is protected with enterprise-grade security</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Mobile Responsive</h4>
+                                <p>Access BloodMate from any device, anywhere</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>24/7 Available</h4>
+                                <p>Emergency support available round the clock</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="blood-types-chart">
+                        <div class="blood-type" data-percentage="45">
+                            <span class="type">O+</span>
+                            <span class="percentage">45%</span>
+                        </div>
+                        <div class="blood-type" data-percentage="40">
+                            <span class="type">A+</span>
+                            <span class="percentage">40%</span>
+                        </div>
+                        <div class="blood-type" data-percentage="11">
+                            <span class="type">B+</span>
+                            <span class="percentage">11%</span>
+                        </div>
+                        <div class="blood-type" data-percentage="4">
+                            <span class="type">AB+</span>
+                            <span class="percentage">4%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Have questions? We're here to help you save lives</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Emergency Hotline</h4>
+                            <p>+1 (555) 123-BLOOD</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Support</h4>
+                            <p>support@bloodmate.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Headquarters</h4>
+                            <p>123 Health Street, Medical District</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section (Hidden by default) -->
+    <section id="dashboard" class="dashboard hidden">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <div class="dashboard-nav">
+                    <button class="btn btn-ghost" onclick="showLanding()">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </button>
+                    <h1>BloodMate Dashboard</h1>
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Welcome, User</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-sidebar">
+                    <div class="sidebar-menu">
+                        <button class="menu-item active" data-section="overview">
+                            <i class="fas fa-tachometer-alt"></i>
+                            Overview
+                        </button>
+                        <button class="menu-item" data-section="register-donor">
+                            <i class="fas fa-user-plus"></i>
+                            Register Donor
+                        </button>
+                        <button class="menu-item" data-section="check-eligibility">
+                            <i class="fas fa-check-circle"></i>
+                            Check Eligibility
+                        </button>
+                        <button class="menu-item" data-section="find-matches">
+                            <i class="fas fa-search"></i>
+                            Find Matches
+                        </button>
+                        <button class="menu-item" data-section="view-donors">
+                            <i class="fas fa-users"></i>
+                            View Donors
+                        </button>
+                        <button class="menu-item" data-section="emergency-request">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Emergency Request
+                        </button>
+                        <button class="menu-item" data-section="campaigns">
+                            <i class="fas fa-calendar-alt"></i>
+                            Campaigns
+                        </button>
+                        <button class="menu-item" data-section="rewards">
+                            <i class="fas fa-trophy"></i>
+                            Rewards
+                        </button>
+                        <button class="menu-item" data-section="statistics">
+                            <i class="fas fa-chart-bar"></i>
+                            Statistics
+                        </button>
+                    </div>
+                </div>
+                <div class="dashboard-main">
+                    <div id="dashboard-content">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-tint blood-drop"></i>
+                        <span>BloodMate</span>
+                    </div>
+                    <p>Connecting hearts, saving lives through technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Donor Registration</a></li>
+                        <li><a href="#">Blood Matching</a></li>
+                        <li><a href="#">Emergency Requests</a></li>
+                        <li><a href="#">Campaign Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Emergency Hotline</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BloodMate. All rights reserved. Made with ❤️ for humanity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/rain.js"></script>
+    <!-- Advanced Features -->
+    <script src="js/bloodmate-chatbot.js"></script>
+    <script src="js/badges-confetti.js"></script>
+    <script src="js/donor-map.js"></script>
+    <script src="js/voice-search.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/easter-eggs.js"></script>
+    <script src="js/streak-progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Dark Mode Styles for BloodMate */
+body.dark-mode {
+    background: #181a20;
+    color: #f4f4fa;
+}
+.dark-mode .navbar,
+.dark-mode .footer,
+.dark-mode .dashboard,
+.dark-mode .about,
+.dark-mode .features,
+.dark-mode .contact {
+    background: #1e212a !important;
+    color: #f4f4fa !important;
+}
+.dark-mode .btn-primary {
+    background: linear-gradient(135deg, #ff3b3f, #b91c1c);
+    color: #fff;
+}
+.dark-mode .btn-secondary {
+    background: #23263b;
+    color: #f4f4fa;
+    border: 1px solid #33354c;
+}
+.dark-mode .feature-card,
+.dark-mode .overview-card,
+.dark-mode .stat-card,
+.dark-mode .form-section,
+.dark-mode .quick-actions,
+.dark-mode .campaign-card,
+.dark-mode .tier-card,
+.dark-mode .leaderboard,
+.dark-mode .points-system {
+    background: #23263b !important;
+    color: #f4f4fa !important;
+    border-color: #33354c !important;
+}
+.dark-mode .nav-link,
+.dark-mode .footer-section ul li a {
+    color: #e0e6f6 !important;
+}
+.dark-mode .nav-link.active,
+.dark-mode .nav-link:hover {
+    color: #ff3b3f !important;
+}
+.dark-mode .stat-icon,
+.dark-mode .feature-icon,
+.dark-mode .tier-icon {
+    background: #ff3b3f !important;
+    color: #fff !important;
+}
+.dark-mode .progress-bar {
+    background: #33354c;
+}
+.dark-mode .progress-fill {
+    background: linear-gradient(90deg, #ff3b3f, #b91c1c);
+}
+.dark-mode .blood-drop,
+.dark-mode .about-feature i {
+    color: #ff3b3f !important;
+}
+.dark-mode .dashboard-sidebar {
+    background: #1e212a !important;
+}
+.dark-mode .menu-item.active {
+    background: #ff3b3f !important;
+    color: #fff !important;
+}
+.dark-mode .contact-form {
+    background: #23263b !important;
+    color: #f4f4fa !important;
+}
+.dark-mode .form-group input,
+.dark-mode .form-group select,
+.dark-mode .form-group textarea {
+    background: #181a20 !important;
+    color: #f4f4fa !important;
+    border-color: #33354c !important;
+}
+.dark-mode .footer-bottom {
+    border-top: 1px solid #33354c;
+}
